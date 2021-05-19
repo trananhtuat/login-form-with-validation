@@ -1,0 +1,225 @@
+:root {
+    --main-color: #2980b9;
+    --form-bg: rgba(0, 0, 0, 0.8);
+    --border-color: #2980b9;
+    --form-color: #c6c6c6;
+    --form-input-bg: rgba(2, 2, 2, 0.22);
+
+    --border-radius: 10px;
+    --form-logo-size: 200px;
+    --form-max-width: 500px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    user-select: none;
+}
+
+.form {
+    padding: 50px 60px;
+    background-color: var(--form-bg);
+    border-radius: var(--border-radius);
+    color: var(--form-color);
+    text-align: center;
+    width: 100%;
+    max-width: var(--form-max-width);
+}
+
+.form-logo {
+    display: block;
+    margin-bottom: 50px;
+}
+
+.form-logo img {
+    width: var(--form-logo-size);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-input {
+    background-color: var(--form-input-bg);
+    border: 2px solid transparent;
+    height: 46px;
+    width: 100%;
+    position: relative;
+    color: var(--form-color);
+    border-radius: var(--border-radius);
+    padding: 0 20px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+.form-input::placeholder {
+    color: var(--form-color);
+}
+
+.form-input:focus {
+    border: 2px solid var(--border-color);
+}
+
+.form-input-icon {
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-input-icon.err {
+    color: #c0392b;
+}
+
+.form-input-icon.success {
+    color: #27ae60;
+}
+
+.form-group.err .form-input-icon.err,
+.form-group.success .form-input-icon.success {
+    transform: scale(1);
+}
+
+.form-input-err-msg {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-top: 10px;
+    padding-left: 20px;
+    color: #c0392b;
+}
+
+.form-group-checkbox {
+    text-align: left;
+}
+
+.form-group-checkbox input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+}
+
+.form-group-checkbox label {
+    cursor: pointer;
+    padding-left: 30px;
+    position: relative;
+}
+
+.form-group-checkbox label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    background-color: var(--form-input-bg);
+}
+
+.form-group-checkbox label i {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    color: var(--main-color);
+    transition: transform 0.3s ease-in-out;
+    transform: scale(0);
+}
+
+.form-group-checkbox input:checked + label i {
+    transform: scale(1);
+}
+
+.form-btn {
+    margin: 15px 0;
+    height: 46px;
+    width: 100%;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--main-color);
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.form-btn:hover {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.form-social {
+    margin: 15px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-social-item {
+    display: grid;
+    place-items: center;
+    height: 44px;
+    width: calc(33% - 10px);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+}
+
+.form-social-item i {
+    font-size: 22px;
+    color: #fff;
+}
+
+.form-social-item.fb {
+    background-color: #3b5999;
+}
+
+.form-social-item.tw {
+    background-color: #1da1f2;
+}
+
+.form-social-item.gg {
+    background-color: #df4a32;
+}
+
+.form-txt {
+    margin-top: 15px;
+    font-size: 14px;
+    display: block;
+}
+
+.form-txt a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.form-txt a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 500px) {
+    .form {
+        height: 100vh;
+        width: 100%;
+        max-width: unset;
+        padding: 50px 30px;
+        border-radius: 0;
+    }
+}
